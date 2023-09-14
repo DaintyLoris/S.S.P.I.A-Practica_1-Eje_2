@@ -3,10 +3,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-# Cargar el archivo "spheres1d10.csv" (asegúrate de que esté en la misma carpeta que este script)
 data = pd.read_csv("spheres1d10.csv")
 
-# Extraer las características (X) y las etiquetas (y)
 X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values
 
@@ -14,7 +12,6 @@ y = data.iloc[:, -1].values
 num_particiones = 5
 porcentaje_entrenamiento = 0.8
 
-# Ciclo para generar cinco particiones
 for i in range(num_particiones):
     # Dividir el conjunto de datos en entrenamiento y prueba
     X_entrenamiento, X_prueba, y_entrenamiento, y_prueba = train_test_split(X, y,
